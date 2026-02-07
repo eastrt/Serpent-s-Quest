@@ -6,8 +6,8 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
-Assets/TutorialInfo
-Assets/Fruit Market
+Assets/TutorialInfo/
+Assets/Fruit Market/
 # Visual Studio / Rider / IDE
 .vs/
 .idea/
@@ -18,6 +18,8 @@ Assets/Fruit Market
 *.pidb
 *.booproj
 *.svd
+.plastic/
+.vscode/
 
 # OS files
 .DS_Store
