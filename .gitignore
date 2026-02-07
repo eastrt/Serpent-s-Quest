@@ -30,3 +30,6 @@ Thumbs.db
 
 # Gradle (Android)
 .gradle/
+
+/ProjectSettings/
+/UserSettings
