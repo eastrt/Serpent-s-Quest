@@ -21,6 +21,8 @@ public class HeadVisualFitter : MonoBehaviour
 
         // 새 모델 생성
         var model = Instantiate(modelPrefab, visualRoot);
+        Debug.Log($"[HeadVisualFitter] {model.name} Renderers={model.GetComponentsInChildren<Renderer>(true).Length} MeshFilters={model.GetComponentsInChildren<MeshFilter>(true).Length}");
+
         model.transform.localPosition = Vector3.zero;
         model.transform.localRotation = Quaternion.identity;
         model.transform.localScale = Vector3.one;
