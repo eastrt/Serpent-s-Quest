@@ -6,7 +6,7 @@ public class SnakeInputHandler : MonoBehaviour
     [Header("Read-only")]
     public Vector2 move;      // WASD/Stick
     public Vector2 look;      // Mouse delta / Left stick
-    public Vector2 turn;      // Mouse delta / Right stick
+    //public Vector2 turn;      // Mouse delta / Right stick
     public bool boostHeld;
 
     // PlayerInput(Send Messages)가 아래 함수들을 자동 호출함 (이름 중요)
@@ -16,10 +16,10 @@ public class SnakeInputHandler : MonoBehaviour
         Debug.Log("Move pressed");
     }
 
-    public void OnTurn(InputValue value)
-    {
-        turn = value.Get<Vector2>();
-    }
+    // public void OnTurn(InputValue value)
+    //{
+    //    turn = value.Get<Vector2>();
+    // }
 
     public void OnBoost(InputValue value)
     {

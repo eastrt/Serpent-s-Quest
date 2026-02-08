@@ -21,18 +21,18 @@ public class SnakeMover : MonoBehaviour
 
         float spd = moveSpeed * (input.boostHeld ? boostMul : 1f);
 
-        // WASD를 "머리의 방향 기준"으로 이동
-        Vector3 local = new Vector3(input.move.x, 0f, input.move.y);
-        Vector3 world = headRoot.TransformDirection(local);
-        world.y = 0f;
+        // W/S: 전/후 (선택: 후진 허용 여부)
+        float forward = Mathf.Clamp(input.move.y, -1f, 1f);
 
-        if (world.sqrMagnitude > 0.0001f)
-        {
-            headRoot.position += world.normalized * spd * Time.deltaTime;
+        // A/D: 좌우 회전(조향)
+        float turn = Mathf.Clamp(input.move.x, -1f, 1f);
 
-            // 이동 방향으로 부드럽게 회전(look 없이도 FPS 느낌)
-            Quaternion target = Quaternion.LookRotation(world.normalized, Vector3.up);
-            headRoot.rotation = Quaternion.RotateTowards(headRoot.rotation, target, turnSpeed * Time.deltaTime);
-        }
+        // 회전 먼저
+        //headRoot.Rotate(Vector3.up, turn * turnSpeed * Time.deltaTime);
+        headRoot.Rotate(0f, turn * turnSpeed * Time.deltaTime, 0f, Space.World);
+        // 전진/후진
+        Vector3 dir = headRoot.forward;
+        dir.y = 0f;
+        headRoot.position += dir.normalized * (spd * forward) * Time.deltaTime;
     }
 }

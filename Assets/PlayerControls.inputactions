@@ -1022,15 +1022,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Turn",
-                    "type": "Value",
-                    "id": "f33c6312-fa68-4d70-a32a-e6dbf3202c5b",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1119,17 +1110,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Boost",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "91b2cd21-c047-4187-8a05-e078504d72c0",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Turn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
