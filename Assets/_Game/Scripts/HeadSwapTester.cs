@@ -25,6 +25,7 @@ public class HeadSwapTester : MonoBehaviour
     public void OnSwapHead(InputValue value)
     {
         if (!value.isPressed) return;
+        Debug.Log("SwapHead pressed");
         Next();
     }
 

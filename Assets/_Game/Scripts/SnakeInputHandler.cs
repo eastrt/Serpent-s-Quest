@@ -5,6 +5,7 @@ public class SnakeInputHandler : MonoBehaviour
 {
     [Header("Read-only")]
     public Vector2 move;      // WASD/Stick
+    public Vector2 look;      // Mouse delta / Left stick
     public Vector2 turn;      // Mouse delta / Right stick
     public bool boostHeld;
 
@@ -12,6 +13,7 @@ public class SnakeInputHandler : MonoBehaviour
     public void OnMove(InputValue value)
     {
         move = value.Get<Vector2>();
+        Debug.Log("Move pressed");
     }
 
     public void OnTurn(InputValue value)
@@ -22,6 +24,7 @@ public class SnakeInputHandler : MonoBehaviour
     public void OnBoost(InputValue value)
     {
         boostHeld = value.isPressed;
+        Debug.Log("Boost pressed");
     }
 
     public void OnSwapHead(InputValue value)
