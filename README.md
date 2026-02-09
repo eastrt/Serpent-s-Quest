@@ -11,3 +11,6 @@ The main source of income is advertising, and there are no in-game purchases.
 -
 ## Gameplay Preview
 ![Gameplay](images/snake_move.gif)
+## Next 
+- 음식 추가 및 버프 적용 테스트   
+사과와 바나나로 테스트 
