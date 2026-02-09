@@ -18,7 +18,7 @@ public class SnakeTrailFollower : MonoBehaviour
     {
         if (head != null)
             points.Add(head.position);
-        for (int i = 0; i < 5; i++) AddSegment();
+        for (int i = 0; i < 3; i++) AddSegment();
     }
 
     void Update()

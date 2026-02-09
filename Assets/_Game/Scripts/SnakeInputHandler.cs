@@ -13,7 +13,7 @@ public class SnakeInputHandler : MonoBehaviour
     public void OnMove(InputValue value)
     {
         move = value.Get<Vector2>();
-        Debug.Log("Move pressed");
+        //Debug.Log("Move pressed");
     }
 
     // public void OnTurn(InputValue value)
@@ -24,7 +24,7 @@ public class SnakeInputHandler : MonoBehaviour
     public void OnBoost(InputValue value)
     {
         boostHeld = value.isPressed;
-        Debug.Log("Boost pressed");
+        //Debug.Log("Boost pressed");
     }
 
     public void OnSwapHead(InputValue value)
@@ -32,6 +32,6 @@ public class SnakeInputHandler : MonoBehaviour
         if (!value.isPressed) return;
         // 여기서 머리 교체 호출
         // 예: GetComponentInChildren<HeadSwapTester>()?.Next();
-        Debug.Log("SwapHead pressed");
+        //Debug.Log("SwapHead pressed");
     }
 }
