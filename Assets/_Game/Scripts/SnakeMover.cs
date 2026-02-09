@@ -10,6 +10,10 @@ public class SnakeMover : MonoBehaviour
     public float boostMul = 1.6f;
     public float turnSpeed = 240f;   // degrees/sec
 
+    // add field
+    [Header("Buff")]
+    public float buffSpeedMul = 1f;
+    Coroutine buffCo;
     void Reset()
     {
         input = GetComponent<SnakeInputHandler>();
@@ -19,7 +23,8 @@ public class SnakeMover : MonoBehaviour
     {
         if (input == null || headRoot == null) return;
 
-        float spd = moveSpeed * (input.boostHeld ? boostMul : 1f);
+        // buff Speed Mul 적용
+        float spd = moveSpeed * (input.boostHeld ? boostMul : 1f) * (buffSpeedMul);
 
         // W/S: 전/후 (선택: 후진 허용 여부)
         float forward = Mathf.Clamp(input.move.y, -1f, 1f);
@@ -35,4 +40,19 @@ public class SnakeMover : MonoBehaviour
         dir.y = 0f;
         headRoot.position += dir.normalized * (spd * forward) * Time.deltaTime;
     }
+
+    public void ApplySpeedBoost(float mul, float duration)
+    {
+        if (buffCo != null) StopCoroutine(buffCo);
+        buffCo = StartCoroutine(CoSpeedBoost(mul, duration));
+    }
+
+    System.Collections.IEnumerator CoSpeedBoost(float mul, float duration)
+    {
+        buffSpeedMul = mul;
+        yield return new WaitForSeconds(duration);
+        buffSpeedMul = 1f;
+        buffCo = null;
+    }
+
 }
