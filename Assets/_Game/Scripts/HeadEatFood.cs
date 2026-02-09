@@ -2,10 +2,19 @@ using UnityEngine;
 
 public class HeadEatFood : MonoBehaviour
 {
-    //public SnakeTrailFollower trail;   // 몸통 관리
-    //public FoodSpawner spawner;        // 다음 먹이 생성
-    [SerializeField] SnakeTrailFollower trail;
-    [SerializeField] FoodSpawner spawner;
+
+    [Header("Refs (drag in Inspector)")]
+    [SerializeField] private SnakeTrailFollower trail;   // 몸통관리
+    [SerializeField] private FoodSpawner spawner;        // 다음 먹이 생성
+    [SerializeField] private SnakeMover mover;           // SnakeRoot에 붙은 SnakeMover
+
+    [Header("Effects Table")]
+    public int appleScore = 1;
+    public int appleAddSegments = 1;
+
+    public float bananaSpeedMul = 1.5f;         //버프 배수
+    public float bananaBoostDuration = 2.0f;    //버프 지속 시간
+
     public int score;
 
 
@@ -18,6 +27,8 @@ public class HeadEatFood : MonoBehaviour
 
         if (spawner == null)
             spawner = FindAnyObjectByType<FoodSpawner>();
+
+        if (mover == null) mover = FindAnyObjectByType<SnakeMover>();
     }
     //void Reset()
     //{
@@ -31,13 +42,45 @@ public class HeadEatFood : MonoBehaviour
     {
         if (!other.CompareTag("Food")) return;
 
+        //FoodType 가져오기
+
+        FoodKind kind = FoodKind.Unknown;
+        var ft = other.GetComponent<FoodType>();
+        if (ft != null) kind = ft.kind;
+        else
+        {
+            string n = other.name.ToLowerInvariant();
+            if (n.Contains("apple")) kind = FoodKind.Apple;
+            else if (n.Contains("banana")) kind = FoodKind.Banana;
+        }
+
         // 먹기
         Destroy(other.gameObject);
 
-        score += 1;
-        if (trail != null) trail.AddSegment();
-        if (spawner != null) spawner.Spawn();
+        //score += 1;
+        //if (trail != null) trail.AddSegment();
+        switch (kind)
+        {
+            case FoodKind.Apple:
+                score += appleScore;
+                for (int i = 0; i < appleAddSegments; i++)
+                    trail?.AddSegment();
+                break;
 
-        Debug.Log($"Score: {score}");
+            case FoodKind.Banana:
+                // 바나나 = 속도/부스트
+                mover?.ApplySpeedBoost(bananaSpeedMul, bananaBoostDuration);
+                break;
+
+            default:
+                // 알 수 없으면 기본 사과처럼 처리(원하면 제거 가능)
+                score += appleScore;
+                trail?.AddSegment();
+                break;
+
+                spawner?.Spawn();
+
+                Debug.Log($"Food={kind}, Score: {score}");
+        }
     }
 }
