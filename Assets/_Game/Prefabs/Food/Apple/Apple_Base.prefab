@@ -169,7 +169,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517671466964821080}
-  m_Mesh: {fileID: -7028588567755198848, guid: 4a26e79c5739a32429a9fdff185d8e6f, type: 3}
+  m_Mesh: {fileID: -5543349752925202341, guid: a0c98b13a8a7df544a04a3fbec8e630e, type: 3}
 --- !u!23 &4716280201398224269
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 528090676980220875}
+  - component: {fileID: 4811951331441843565}
   m_Layer: 6
   m_Name: FoodVisual
   m_TagString: Untagged
@@ -251,3 +252,27 @@ Transform:
   - {fileID: 5852633351782104802}
   m_Father: {fileID: 4393781559631388143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4811951331441843565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543791504056987686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe88c6870ad735a499169cf91ab5df98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SerpentsQuest.Food.FoodRipenessTint
+  identity: {fileID: 2794641424208811050}
+  renderers:
+  - {fileID: 4716280201398224269}
+  unripeBrightness: 1.05
+  ripeBrightness: 1
+  overripeBrightness: 0.9
+  rottenBrightness: 0.55
+  unripeTint: {r: 0.85, g: 1.15, b: 0.85, a: 1}
+  ripeTint: {r: 1, g: 1, b: 1, a: 1}
+  overripeTint: {r: 1.1, g: 0.9, b: 0.7, a: 1}
+  rottenTint: {r: 0.15, g: 0.15, b: 0.15, a: 1}
+  applyOnAwake: 1

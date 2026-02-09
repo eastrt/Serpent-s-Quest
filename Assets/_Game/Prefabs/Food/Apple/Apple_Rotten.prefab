@@ -56,32 +56,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4811951331441843565, guid: 67280d095b016bd42aa1ffb2b416c08a, type: 3}
+      propertyPath: unripeTint.b
+      value: 0.15686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811951331441843565, guid: 67280d095b016bd42aa1ffb2b416c08a, type: 3}
+      propertyPath: unripeTint.g
+      value: 0.15686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811951331441843565, guid: 67280d095b016bd42aa1ffb2b416c08a, type: 3}
+      propertyPath: unripeTint.r
+      value: 0.15686275
+      objectReference: {fileID: 0}
     - target: {fileID: 7392483498291654983, guid: 67280d095b016bd42aa1ffb2b416c08a, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 979027890642638559, guid: 596ef0b99482a0748afdf7ab5788b119, type: 3}
+      objectReference: {fileID: -5543349752925202341, guid: a0c98b13a8a7df544a04a3fbec8e630e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6543791504056987686, guid: 67280d095b016bd42aa1ffb2b416c08a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8882440226973435060}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67280d095b016bd42aa1ffb2b416c08a, type: 3}
---- !u!1 &4980761234090003149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6543791504056987686, guid: 67280d095b016bd42aa1ffb2b416c08a, type: 3}
-  m_PrefabInstance: {fileID: 2292051043912104683}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8882440226973435060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4980761234090003149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db5f835a243c0c04eb21573c7c5c2736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoodTintByRipeness
