@@ -6,6 +6,7 @@ namespace SerpentsQuest.Food
     {
         Apple,
         Banana,
+        DummyBana,
         // 앞으로 추가: Orange, Grape ...
     }
 

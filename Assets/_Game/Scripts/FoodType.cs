@@ -4,6 +4,7 @@ public enum FoodKind
 {
     Apple,
     Banana,
+    DummyBana,
     Unknown
 }
 
@@ -35,6 +36,7 @@ public class FoodType : MonoBehaviour
         // (Clone) 붙어도 상관없게 문자열 포함 체크
         if (n.Contains("apple")) kind = FoodKind.Apple;
         else if (n.Contains("banana")) kind = FoodKind.Banana;
+        else if (n.Contains("dummybana")) kind = FoodKind.DummyBana;
         else kind = FoodKind.Unknown;
     }
 }
