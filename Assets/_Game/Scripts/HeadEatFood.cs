@@ -52,6 +52,17 @@ public class HeadEatFood : MonoBehaviour, IFoodConsumer
 
             case FruitType.Banana:
                 // ✅ SnakeMover가 코루틴으로 버프를 관리함 (먹을 때마다 갱신)
+                //mover?.ApplySpeedBoost(bananaSpeedMul, bananaBoostDuration);
+                score += appleScore;
+                trail?.AddSegment();
+                break;
+
+            case FruitType.DummyBana:
+
+                score += appleScore;
+                trail?.AddSegment();
+
+                trail?.AddSegment(); // ✅ +2
                 mover?.ApplySpeedBoost(bananaSpeedMul, bananaBoostDuration);
                 break;
 
